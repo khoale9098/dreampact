@@ -2,6 +2,13 @@
   "name": "dreampact",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint:fix": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -19,11 +26,13 @@
     "styled-components": "^5.0.1",
     "typescript": "~3.7.2"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "@types/styled-components": "^5.0.1",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "prettier": "^2.0.2"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,9 +48,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/styled-components": "^5.0.1",
-    "eslint": "^6.8.0"
   }
 }

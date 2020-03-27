@@ -3,35 +3,31 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "A website for testing",
+    "tagline": "Dreampact React Library",
     "docs": {
-      "doc1": {
-        "title": "Latin-ish",
-        "sidebar_label": "Example Page"
+      "getting-started/installation": {
+        "title": "Installation",
+        "sidebar_label": "Installation"
       },
-      "doc2": {
-        "title": "document number 2"
+      "getting-started/introduction": {
+        "title": "Introduction",
+        "sidebar_label": "Introduction"
       },
-      "doc3": {
-        "title": "This is document number 3"
+      "hooks/use-browser-detection": {
+        "title": "useBrowserDetection Hook",
+        "sidebar_label": "useBrowserDetection"
       },
-      "doc4": {
-        "title": "Other Document"
-      },
-      "doc5": {
-        "title": "Fifth Document"
+      "hooks/use-click-away": {
+        "title": "useClickAway Hook",
+        "sidebar_label": "useClickAway"
       }
     },
     "links": {
-      "Docs": "Docs",
-      "API": "API",
-      "Help": "Help",
       "Blog": "Blog"
     },
     "categories": {
-      "Docusaurus": "Docusaurus",
-      "First Category": "First Category",
-      "Second Category": "Second Category"
+      "Getting started": "Getting started",
+      "Hooks": "Hooks"
     }
   },
   "pages-strings": {
