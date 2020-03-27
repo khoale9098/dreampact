@@ -1,4 +1,3 @@
-
 import { useRef, useLayoutEffect, useState, MutableRefObject } from 'react';
 
 import 'intersection-observer';
@@ -11,10 +10,8 @@ function isInViewPort(el: HTMLElement): boolean {
     return false;
   }
 
-  const viewPortWidth =
-    window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-  const viewPortHeight =
-    window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+  const viewPortWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  const viewPortHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
   const rect = el.getBoundingClientRect();
 
   if (rect) {
@@ -27,9 +24,7 @@ function isInViewPort(el: HTMLElement): boolean {
 
 function useInViewport<T extends HTMLElement = HTMLElement>(): [InViewport, MutableRefObject<T>];
 function useInViewport<T extends HTMLElement = HTMLElement>(arg: Arg): [InViewport];
-function useInViewport<T extends HTMLElement = HTMLElement>(
-  ...args: [Arg] | []
-): [InViewport, MutableRefObject<T>?] {
+function useInViewport<T extends HTMLElement = HTMLElement>(...args: [Arg] | []): [InViewport, MutableRefObject<T>?] {
   const element = useRef<T>();
   const hasPassedInElement = args.length === 1;
   const arg = useRef(args[0]);
@@ -49,7 +44,7 @@ function useInViewport<T extends HTMLElement = HTMLElement>(
       return () => {};
     }
 
-    const observer = new IntersectionObserver(entries => {
+    const observer = new IntersectionObserver((entries) => {
       for (const entry of entries) {
         if (entry.isIntersecting) {
           setInViewport(true);

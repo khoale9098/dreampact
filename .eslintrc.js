@@ -26,6 +26,10 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
+        "prettier/prettier": ["error", {
+           "endOfLine":"auto"
+        }],
+        "@typescript-eslint/explicit-function-return-type": "off"
     },
     "settings": {
         "react": {

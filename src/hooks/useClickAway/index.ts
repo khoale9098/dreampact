@@ -1,12 +1,12 @@
-import {MutableRefObject, useRef, useEffect, useCallback } from "react";
+import { MutableRefObject, useRef, useEffect, useCallback } from 'react';
 
 export default function useClickAway<T extends Element = HTMLDivElement>(
-  onClickAway: (event: KeyboardEvent) => void
+  onClickAway: (event: KeyboardEvent) => void,
 ): MutableRefObject<T> {
   const element = useRef<T>();
 
   const handler = useCallback(
-    event => {
+    (event) => {
       const el = element.current;
       if (!el || el.contains(event.target)) {
         return;
