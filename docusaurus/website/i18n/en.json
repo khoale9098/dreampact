@@ -20,6 +20,14 @@
       "hooks/use-click-away": {
         "title": "useClickAway Hook",
         "sidebar_label": "useClickAway"
+      },
+      "hooks/use-event-emitter": {
+        "title": "useEventEmitter Hook",
+        "sidebar_label": "useEventEmitter"
+      },
+      "hooks/use-slug": {
+        "title": "useSlug Hook",
+        "sidebar_label": "useSlug"
       }
     },
     "links": {
