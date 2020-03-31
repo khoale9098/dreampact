@@ -1,10 +1,18 @@
 import React from 'react';
-import { useIsMobile, useBrowserDetection, useSlug, useClickAway } from './hooks';
+import { useIsMobile, useBrowserDetection, useSlug, useClickAway, useEventEmitter } from './hooks';
 
 function App() {
   const isMobile = useIsMobile(navigator.userAgent || navigator.vendor);
   const browser = useBrowserDetection(navigator.userAgent || navigator.vendor);
   const slug = useSlug('hello dasd as dsa d 1w12world');
+
+  const event = useEventEmitter<{ type: string }>();
+
+  function onNewEvent(data: { type: string }) {
+    console.log(data);
+  }
+
+  event.useSubscription(onNewEvent);
 
   function onClickAway(event: KeyboardEvent) {
     console.log(event.target);

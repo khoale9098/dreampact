@@ -1,6 +1,5 @@
 import { useRef, useEffect } from 'react';
-
-type Subscription<T> = (val: T) => void;
+import { Subscription } from './types';
 
 export class EventEmitter<T> {
   private subscriptions = new Set<Subscription<T>>();
