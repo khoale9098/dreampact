@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>useInViewport Hook · Dreampact</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="You can use this hook to detect if element is visible on screen."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="useInViewport Hook · Dreampact"/><meta property="og:type" content="website"/><meta property="og:url" content="https://pdcamargo.github.io/dreampact/"/><meta property="og:description" content="You can use this hook to detect if element is visible on screen."/><meta property="og:image" content="https://pdcamargo.github.io/dreampact/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://pdcamargo.github.io/dreampact/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/dreampact/img/dp.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css"/><link rel="alternate" type="application/atom+xml" href="https://pdcamargo.github.io/dreampact/blog/atom.xml" title="Dreampact Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://pdcamargo.github.io/dreampact/blog/feed.xml" title="Dreampact Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/dreampact/js/scrollSpy.js"></script><link rel="stylesheet" href="/dreampact/css/main.css"/><script src="/dreampact/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/dreampact/"><img class="logo" src="/dreampact/img/dp.png" alt="Dreampact"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/dreampact/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">useInViewport Hook</h1></header><article><div><span><p>You can use this hook to detect if element is visible on screen.</p>
+<h3><a class="anchor" aria-hidden="true" id="usage"></a><a href="#usage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage</h3>
+<p>Just import the hook and assign to a variable. The response will be a boolean that says if element is on viewport, and a reference to use in desired element to be checked.</p>
+<p>You can also pass an optional element type to the function.</p>
+<p>After that, just use React hook <strong>useEffect</strong> passing the boolean as dependence to take any actions that you want.</p>
+<pre><code class="hljs css language-tsx"><span class="hljs-keyword">import</span> React, { useEffect } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { useInViewport } <span class="hljs-keyword">from</span> <span class="hljs-string">'./hooks'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SomeComponent</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> [isInViewport, reference] = useInViewport&lt;HTMLSpanElement&gt;();
+
+  useEffect(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Element is on screen ? '</span>, isInViewport);
+  }, [isInViewport]);
+
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{reference}</span>&gt;</span>I will be the experiment<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span>
+  )
+}
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 4/1/2020 by Patrick Dias</em></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"></nav></div><footer style="display:flex;align-items:center;justify-content:center;min-height:80px;background-color:#282a36"><span style="font-size:16px;color:#fff">© Dreampact - all rights reserved.</span></footer></div></body></html>
