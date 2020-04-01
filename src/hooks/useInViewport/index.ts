@@ -29,6 +29,7 @@ function useInViewport<T extends HTMLElement = HTMLElement>(...args: [Arg] | [])
   const hasPassedInElement = args.length === 1;
   const arg = useRef(args[0]);
   [arg.current] = args;
+  const argCurrent = typeof arg.current === 'function' ? undefined : arg.current;
   const [inViewPort, setInViewport] = useState<InViewport>(() => {
     const initDOM = typeof arg.current === 'function' ? arg.current() : arg.current;
 
@@ -59,7 +60,7 @@ function useInViewport<T extends HTMLElement = HTMLElement>(...args: [Arg] | [])
     return () => {
       observer.disconnect();
     };
-  }, [element.current, typeof arg.current === 'function' ? undefined : arg.current]);
+  }, [hasPassedInElement, argCurrent]);
 
   if (hasPassedInElement) {
     return [inViewPort];

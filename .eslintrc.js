@@ -29,7 +29,28 @@ module.exports = {
         "prettier/prettier": ["error", {
            "endOfLine":"auto"
         }],
-        "@typescript-eslint/explicit-function-return-type": "off"
+        "@typescript-eslint/explicit-function-return-type": "off",
+        'no-unused-expressions': [
+            'warn',
+            {
+                allowShortCircuit: true,
+                allowTernary: true
+            }
+        ],
+    
+        /**
+         * @description Enforces that there is no spreading for any JSX attribute
+         */
+        'react/jsx-props-no-spreading': 'off',
+        'react/destructuring-assignment': 'off',
+        'no-plusplus': 'off',
+        '@typescript-eslint/no-empty-interface': ['warn'],
+        'react/destructuring-assignment': 'off',
+        'no-plusplus': 'off',
+        '@typescript-eslint/no-empty-interface': ['warn'],
+        "@typescript-eslint/no-explicit-any": 'off',
+        '@typescript-eslint/ban-ts-ignore': 'off'      
+      
     },
     "settings": {
         "react": {

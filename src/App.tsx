@@ -1,31 +1,26 @@
-import React from 'react';
-import { useIsMobile, useBrowserDetection, useSlug, useClickAway, useEventEmitter } from './hooks';
+import React, { useEffect } from 'react';
+import { useInViewport, useKeyPress } from './hooks';
 
 function App() {
-  const isMobile = useIsMobile(navigator.userAgent || navigator.vendor);
-  const browser = useBrowserDetection(navigator.userAgent || navigator.vendor);
-  const slug = useSlug('hello dasd as dsa d 1w12world');
+  const [isInViewport, reference] = useInViewport<HTMLSpanElement>();
 
-  const event = useEventEmitter<{ type: string }>();
+  const keyPressed = useKeyPress('Escape');
 
-  function onNewEvent(data: { type: string }) {
-    console.log(data);
-  }
+  useEffect(() => {
+    console.log('is key pressed', keyPressed);
+  }, [keyPressed]);
 
-  event.useSubscription(onNewEvent);
-
-  function onClickAway(event: KeyboardEvent) {
-    console.log(event.target);
-  }
-
-  const clickAwayRef = useClickAway<HTMLSpanElement>(onClickAway);
+  useEffect(() => {
+    console.log('Element is on screen ? ', isInViewport);
+  }, [isInViewport]);
 
   return (
-    <div className="App">
-      <h1>Hi: {isMobile.toString()}</h1>
-      <h1>From: {browser}</h1>
-      <h1>Slug: {slug}</h1>
-      <span ref={clickAwayRef}>Spann</span>
+    <div
+      style={{
+        height: 5000,
+      }}
+    >
+      <span ref={reference}>Am i on screen?</span>
     </div>
   );
 }

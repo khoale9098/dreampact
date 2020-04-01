@@ -17,6 +17,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.0",
+    "bowser": "^2.9.0",
     "global": "^4.4.0",
     "intersection-observer": "^0.7.0",
     "npx": "^10.2.2",

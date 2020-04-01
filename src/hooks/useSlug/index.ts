@@ -9,8 +9,8 @@ const useSlug = (value: string) => {
     .replace(/\s+/g, '-')
     .replace(regex, (character) => to.charAt(from.indexOf(character)))
     .replace(/&/g, '-and-')
-    .replace(/[^\w\-]+/g, '')
-    .replace(/\-\-+/g, '-')
+    .replace(/[^\w-]+/g, '')
+    .replace(/--+/g, '-')
     .replace(/^-+/, '')
     .replace(/-+$/, '');
 };
