@@ -29,6 +29,14 @@
         "title": "useInViewport Hook",
         "sidebar_label": "useInViewport"
       },
+      "hooks/use-is-mobile": {
+        "title": "useIsMobile Hook",
+        "sidebar_label": "useIsMobile"
+      },
+      "hooks/use-key-press": {
+        "title": "useKeyPress Hook",
+        "sidebar_label": "useKeyPress"
+      },
       "hooks/use-slug": {
         "title": "useSlug Hook",
         "sidebar_label": "useSlug"

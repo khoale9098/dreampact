@@ -9,6 +9,8 @@
       "hooks/use-click-away",
       "hooks/use-event-emitter",
       "hooks/use-in-viewport",
+      "hooks/use-is-mobile",
+      "hooks/use-key-press",
       "hooks/use-slug"
     ]
   }

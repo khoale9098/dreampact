@@ -47,9 +47,9 @@ export type isMobileResult = {
     chrome: boolean;
     device: boolean;
   };
-  phone: boolean;
-  tablet: boolean;
-  any: boolean;
+  isPhone: boolean;
+  isTablet: boolean;
+  isAnyMobile: boolean;
 };
 
 export default function useIsMobile(userAgent?: NavigatorID['userAgent'] | NavigatorID['vendor']): isMobileResult {
@@ -114,15 +114,15 @@ export default function useIsMobile(userAgent?: NavigatorID['userAgent'] | Navig
         match(otherFirefox) ||
         match(otherChrome),
     },
-    any: false,
-    phone: false,
-    tablet: false,
+    isAnyMobile: false,
+    isPhone: false,
+    isTablet: false,
   };
 
-  result.any = result.apple.device || result.android.device || result.windows.device || result.other.device;
+  result.isAnyMobile = result.apple.device || result.android.device || result.windows.device || result.other.device;
   // excludes 'other' devices and ipods, targeting touchscreen phones
-  result.phone = result.apple.phone || result.android.phone || result.windows.phone;
-  result.tablet = result.apple.tablet || result.android.tablet || result.windows.tablet;
+  result.isPhone = result.apple.phone || result.android.phone || result.windows.phone;
+  result.isTablet = result.apple.tablet || result.android.tablet || result.windows.tablet;
 
   return result;
 }
