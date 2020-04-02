@@ -61,17 +61,24 @@
               }
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Introduction</h1></header><article><div><span><ul>
-<li><a href="#javascript-or-typescript"><code>Javascript or Typescript?</code></a></li>
-<li><a href="#dependencies"><code>Dependencies</code></a></li>
+<li><a href="#atomic"><code>Atomic</code></a></li>
+<li><a href="#type-today-type-tommorow-type-forever"><code>Type today, type tommorow, type forever</code></a></li>
+<li><a href="#hooks"><code>Hooks</code></a></li>
 </ul>
-<h3><a class="anchor" aria-hidden="true" id="javascript-or-typescript"></a><a href="#javascript-or-typescript" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Javascript or Typescript?</code></h3>
-<p>We write our code entirely with typescript. All types of all of our methods, components and etc will be exported without the need to install a new package.</p>
-<h3><a class="anchor" aria-hidden="true" id="dependencies"></a><a href="#dependencies" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Dependencies</code></h3>
-<p>You will need to install <strong>styled components</strong> if you want to customize our components. Besides that, you don't have to install anything else.</p>
-<p>To install <strong>styled components</strong> run:</p>
-<pre><code class="hljs">yarn <span class="hljs-keyword">add</span><span class="bash"> styled-components</span>
-</code></pre>
-<p>And to help with <strong>typescript</strong>, install styled components types, by running:</p>
-<pre><code class="hljs">yarn <span class="hljs-keyword">add</span><span class="bash"> -D @types/styled-components</span>
-</code></pre>
+<p>Framework to help creating a complete, reusable and responsive react application.</p>
+<h3><a class="anchor" aria-hidden="true" id="atomic"></a><a href="#atomic" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Atomic</code></h3>
+<p>We build our components to be consistent and reusable, and for that, we choose to use Atomic Design to make them more efficient as possible.</p>
+<h3><a class="anchor" aria-hidden="true" id="type-today-type-tommorow-type-forever"></a><a href="#type-today-type-tommorow-type-forever" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Type today, type tommorow, type forever</code></h3>
+<p>We write our code entirely with typescript and all types of all of our methods, components and etc will be exported without the need to install a new package.</p>
+<h3><a class="anchor" aria-hidden="true" id="hooks"></a><a href="#hooks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Hooks</code></h3>
+<p>We love React Hooks. To help build more complex or interactive or just fun applications, we wrote a few utility hooks to be used whatever you see that it fits.</p>
+<p>A few examples are:</p>
+<ul>
+<li><a href="/dreampact/docs/hooks/use-in-viewport">useInViewport</a>
+To check if a element is visible on screen.</li>
+<li><a href="/dreampact/docs/hooks/use-browser-detection">useBrowserDetection</a>
+To get user browser name, version, operational system name, and etc.</li>
+<li><a href="/dreampact/docs/hooks/use-event-emitter">useEventEmitter</a></li>
+</ul>
+<p>And a lot more in our <a href="/dreampact/docs/getting-started/introduction.html">documentation</a>.</p>
 </span></div></article></div><div class="docLastUpdate"><em>Last updated on 3/26/2020 by pdcamargo</em></div><div class="docs-prevnext"><a class="docs-next button" href="/dreampact/docs/getting-started/installation"><span>Installation</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer style="display:flex;align-items:center;justify-content:center;min-height:80px;background-color:#282a36"><span style="font-size:16px;color:#fff">© Dreampact - all rights reserved.</span></footer></div></body></html>
