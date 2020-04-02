@@ -1,8 +1,25 @@
 {
   "name": "dreampact",
-  "version": "0.1.0",
-  "private": true,
+  "description": "Framework to help creating a complete, reusable and responsive react application.",
+  "version": "0.1.1",
+  "author": "Patrick Dias <pdcamargo@hotmail.com> (https://pdcamargo.github.com)",
+  "repository": "https://github.com/pdcamargo/dreampact",
+  "main": "lib/index.js",
+  "keywords": [
+    "react",
+    "atomic",
+    "styled",
+    "hooks"
+  ],
+  "homepage": "https://pdcamargo.github.io/dreampact/docs/getting-started/introduction",
+  "bugs": "https://github.com/pdcamargo/dreampact/issues",
+  "files": [
+    "lib"
+  ],
+  "private": false,
+  "license": "MIT",
   "scripts": {
+    "lib": "tsc -p tsconfig.prod.json",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -25,7 +42,7 @@
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0",
     "styled-components": "^5.0.1",
-    "typescript": "~3.7.2"
+    "typescript": "^3.8.3"
   },
   "devDependencies": {
     "@types/styled-components": "^5.0.1",
@@ -36,7 +53,11 @@
     "prettier": "^2.0.2"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "ignorePatterns": [
+      "node_modules",
+      "lib"
+    ]
   },
   "browserslist": {
     "production": [

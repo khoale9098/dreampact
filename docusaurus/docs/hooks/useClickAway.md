@@ -12,7 +12,7 @@ The hook returns a reference to be used in the component that will check the awa
 
 ```tsx
 import React from 'react';
-import { useClickAway } from '@dreampact/core';
+import { useClickAway } from 'dreampact';
 
 export function SomeComponent() {
   function onClickAway(event: KeyboardEvent) {

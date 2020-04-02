@@ -12,7 +12,7 @@ You just need to import the hook and pass user agent as parameter.
 
 ```tsx
 import React from 'react';
-import { useBrowserDetection } from '@dreampact/core';
+import { useBrowserDetection } from 'dreampact';
 
 export function SomeComponent() {
   const { browser: { name, version } } = useBrowserDetection(navigator.userAgent);

@@ -16,7 +16,7 @@ Any component that get the hook as param, can either subscribe or emit data.
 
 ```tsx
 import React from 'react';
-import { useEventEmitter } from '@dreampact/core';
+import { useEventEmitter } from 'dreampact';
 
 type SomeType = {
   message: string
@@ -42,7 +42,7 @@ export function SomeComponent() {
 
 /// Some other component
 import React, { useState } from 'react';
-import { useEventEmitter } from '@dreampact/core';
+import { useEventEmitter } from 'dreampact';
 
 export function SomeOtherComponent({ emitter }: { emitter: EventEmitter<SomeType>}) {
   const [ message, setMessage ] = useState("");

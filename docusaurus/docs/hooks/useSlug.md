@@ -14,7 +14,7 @@ A few characters will be transformed and sanatized, such as ãåăæçèéë and
 
 ```tsx
 import React from 'react';
-import { useSlug } from '@dreampact/core';
+import { useSlug } from 'dreampact';
 
 export function SomeComponent() {
   const originalText = "Hi, my name is ãåăæçèé"; 

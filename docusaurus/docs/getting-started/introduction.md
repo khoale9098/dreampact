@@ -1,3 +1,10 @@
+---
+id: introduction
+title: Introduction
+description: Getting started with Dreampact, framework to help creating a complete - and responsive - react application.
+sidebar_label: Introduction
+---
+
 Framework to help creating a complete, reusable and responsive react application.
 
 ### `Atomic`
@@ -11,11 +18,11 @@ We love React Hooks. To help build more complex or interactive or just fun appli
 
 A few examples are:
 
-- [useInViewport](https://pdcamargo.github.io/dreampact/docs/hooks/use-in-viewport)
+- [useInViewport](/dreampact/docs/hooks/use-in-viewport)
 To check if a element is visible on screen.
-- [useBrowserDetection](https://pdcamargo.github.io/dreampact/docs/hooks/use-browser-detection)
+- [useBrowserDetection](/dreampact/docs/hooks/use-browser-detection)
 To get user browser name, version, operational system name, and etc.
-- [useEventEmitter](https://pdcamargo.github.io/dreampact/docs/hooks/use-event-emitter)
+- [useEventEmitter](/dreampact/docs/hooks/use-event-emitter)
 To create events and share data in any component by creating events and subscribing to them.
 
-And a lot more in our [documentation](https://pdcamargo.github.io/dreampact/docs/getting-started/introduction.html).
+To learn how to install, go to [installation section](/dreampact/docs/getting-started/installation).

@@ -7,7 +7,7 @@ sidebar_label: Installation
 To install dreampact, just run:
 
 ```
-yarn add @dreampact/core
+yarn add dreampact
 ```
 
 If you will customize any of dreampact styled components, you will need to install styled components library:

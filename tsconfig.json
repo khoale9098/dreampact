@@ -1,26 +1,32 @@
 {
+  "exclude": ["node_modules", "coverage", "lib", "scripts"],
+  "files": ["src/index.ts"],
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
+    "target": "ES5",
+    "module": "ES2015",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
+    "lib": [
+      "DOM",
+      "ES2015",
+      "ES2016",
+      "ES2017",
+      "ES2018"
+    ],
+    "types": [
+      "react"
+    ],
+    "declaration": true,
     "jsx": "react",
-    "downlevelIteration": true
-  },
-  "include": [
-    "src"
-  ]
+    "sourceMap": true,
+    "strict": true,
+    "strictNullChecks": false,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "outDir": "lib",
+    "skipLibCheck": true,
+    "noImplicitThis": false,
+    "downlevelIteration": true,
+  }
 }
