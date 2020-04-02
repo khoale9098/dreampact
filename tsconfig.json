@@ -1,9 +1,16 @@
 {
-  "exclude": ["node_modules", "coverage", "lib", "scripts"],
-  "files": ["src/index.ts"],
+  "exclude": [
+    "node_modules",
+    "coverage",
+    "lib",
+    "scripts"
+  ],
+  "files": [
+    "src/index.ts"
+  ],
   "compilerOptions": {
     "target": "ES5",
-    "module": "ES2015",
+    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "lib": [
@@ -28,5 +35,13 @@
     "skipLibCheck": true,
     "noImplicitThis": false,
     "downlevelIteration": true,
-  }
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "noEmit": true
+  },
+  "include": [
+    "src"
+  ]
 }
