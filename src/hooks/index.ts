@@ -5,3 +5,4 @@ export { default as useInViewport } from './useInViewport';
 export { default as useIsMobile } from './useIsMobile';
 export { default as useKeyPress } from './useKeyPress';
 export { default as useSlug } from './useSlug';
+export { default as useLocalStorage, writeStorage, removeFromStorage } from './useLocalStorage';
