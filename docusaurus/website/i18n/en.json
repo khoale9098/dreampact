@@ -25,13 +25,18 @@
         "title": "useEventEmitter Hook",
         "sidebar_label": "useEventEmitter"
       },
+      "hooks/use-in-viewport": {
+        "title": "useInViewport Hook",
+        "sidebar_label": "useInViewport"
+      },
       "hooks/use-slug": {
         "title": "useSlug Hook",
         "sidebar_label": "useSlug"
       }
     },
     "links": {
-      "Blog": "Blog"
+      "Blog": "Blog",
+      "GitHub": "GitHub"
     },
     "categories": {
       "Getting started": "Getting started",

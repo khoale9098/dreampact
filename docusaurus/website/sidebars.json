@@ -8,6 +8,7 @@
       "hooks/use-browser-detection",
       "hooks/use-click-away",
       "hooks/use-event-emitter",
+      "hooks/use-in-viewport",
       "hooks/use-slug"
     ]
   }

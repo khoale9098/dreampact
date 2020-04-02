@@ -35,3 +35,15 @@
 .navPusher {
   background-color: #f2f3f8;
 }
+
+.docsNavContainer {
+  box-shadow: 5px 0 15px -5px rgba(82,63,105,.08);
+}
+
+.navListItemActive  {
+  font-weight: bold;
+}
+
+.navigationSlider .slidingNav ul li a {
+  color: #383a59 !important;
+}
