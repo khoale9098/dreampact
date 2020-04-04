@@ -11,6 +11,7 @@
       "hooks/use-in-viewport",
       "hooks/use-is-mobile",
       "hooks/use-key-press",
+      "hooks/use-local-storage",
       "hooks/use-slug"
     ]
   }

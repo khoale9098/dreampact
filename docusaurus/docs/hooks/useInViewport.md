@@ -16,7 +16,7 @@ After that, just use React hook **useEffect** passing the boolean as dependence 
 
 ```tsx
 import React, { useEffect } from 'react';
-import { useInViewport } from './hooks';
+import { useInViewport } from 'dreampact';
 
 export function SomeComponent() {
   const [isInViewport, reference] = useInViewport<HTMLSpanElement>();

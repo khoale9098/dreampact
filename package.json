@@ -1,7 +1,7 @@
 {
   "name": "dreampact",
   "description": "Framework to help creating a complete, reusable and responsive react application.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Patrick Dias <pdcamargo@hotmail.com> (https://pdcamargo.github.com)",
   "repository": "https://github.com/pdcamargo/dreampact",
   "main": "lib/index.js",
@@ -38,13 +38,17 @@
     "global": "^4.4.0",
     "intersection-observer": "^0.7.0",
     "npx": "^10.2.2",
+    "query-string": "^6.11.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "styled-components": "^5.0.1",
     "typescript": "^3.8.3"
   },
   "devDependencies": {
+    "@types/query-string": "^6.3.0",
+    "@types/react-router-dom": "^5.1.3",
     "@types/styled-components": "^5.0.1",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",

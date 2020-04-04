@@ -37,6 +37,10 @@
         "title": "useKeyPress Hook",
         "sidebar_label": "useKeyPress"
       },
+      "hooks/use-local-storage": {
+        "title": "useLocalStorage Hook",
+        "sidebar_label": "useLocalStorage"
+      },
       "hooks/use-slug": {
         "title": "useSlug Hook",
         "sidebar_label": "useSlug"

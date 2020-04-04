@@ -8,15 +8,6 @@ function tryParse<T>(value?: string): T {
   }
 }
 
-function isValidJSON(value: string) {
-  try {
-    JSON.parse(value);
-  } catch {
-    return false;
-  }
-  return true;
-}
-
 export function writeStorage<T = string>(key: string, value: T) {
   localStorage.setItem(key, typeof value === 'object' ? JSON.stringify(value) : `${value}`);
 }

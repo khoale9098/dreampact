@@ -12,7 +12,7 @@ Just import the hook passing the key name as param, like "escape" or "a", etc. T
 
 ```tsx
 import React, { useEffect } from 'react';
-import { useKeyPress } from './hooks';
+import { useKeyPress } from 'dreampact';
 
 export function SomeComponent() {
   const isEscapePressed = useKeyPress('escape');
