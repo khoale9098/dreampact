@@ -4,7 +4,7 @@ title: useLocalStorage Hook
 sidebar_label: useLocalStorage
 ---
 
-You can use this hook to worth with local storage more easily.
+You can use this hook to wortk with local storage more easily.
 
 ### Usage
 

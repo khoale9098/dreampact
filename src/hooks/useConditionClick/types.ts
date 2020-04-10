@@ -1,9 +1,9 @@
-export type Details = {
+export type ConditionClickDetails = {
   x: number;
   y: number;
 };
 
-export type ClickConditionEvent = (event: React.MouseEvent, details: Details) => void;
+export type ClickConditionEvent = (event: React.MouseEvent, details: ConditionClickDetails) => void;
 
 export enum CLICK_TYPES {
   single = 'detail=1',
