@@ -14,7 +14,8 @@
       "ES2018"
     ],
     "types": [
-      "react"
+      "react",
+      "./src/@types"
     ],
     "declaration": true,
     "jsx": "react",
@@ -27,6 +28,6 @@
     "outDir": "lib",
     "skipLibCheck": true,
     "noImplicitThis": false,
-    "downlevelIteration": true,
+    "downlevelIteration": true
   }
 }

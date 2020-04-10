@@ -13,6 +13,10 @@
         "title": "Introduction",
         "sidebar_label": "Introduction"
       },
+      "hooks/use-array": {
+        "title": "useArray Hook",
+        "sidebar_label": "useArray"
+      },
       "hooks/use-browser-detection": {
         "title": "useBrowserDetection Hook",
         "sidebar_label": "useBrowserDetection"
@@ -21,9 +25,29 @@
         "title": "useClickAway Hook",
         "sidebar_label": "useClickAway"
       },
+      "hooks/use-condition-click": {
+        "title": "useConditionClick Hook",
+        "sidebar_label": "useConditionClick"
+      },
+      "hooks/use-document-title": {
+        "title": "useDocumentTitle Hook",
+        "sidebar_label": "useDocumentTitle"
+      },
       "hooks/use-event-emitter": {
         "title": "useEventEmitter Hook",
         "sidebar_label": "useEventEmitter"
+      },
+      "hooks/use-event-listener": {
+        "title": "useEventListener Hook",
+        "sidebar_label": "useEventListener"
+      },
+      "hooks/use-fullscreen": {
+        "title": "useFullScreen Hook",
+        "sidebar_label": "useFullScreen"
+      },
+      "hooks/use-interval": {
+        "title": "useInterval Hook",
+        "sidebar_label": "useInterval"
       },
       "hooks/use-in-viewport": {
         "title": "useInViewport Hook",
@@ -41,9 +65,37 @@
         "title": "useLocalStorage Hook",
         "sidebar_label": "useLocalStorage"
       },
+      "hooks/use-lock-body-scroll": {
+        "title": "useLockBodyScroll Hook",
+        "sidebar_label": "useLockBodyScroll"
+      },
+      "hooks/use-navigator-online": {
+        "title": "useNavigatorOnline Hook",
+        "sidebar_label": "useNavigatorOnline"
+      },
+      "hooks/use-router": {
+        "title": "useRouter Hook",
+        "sidebar_label": "useRouter"
+      },
+      "hooks/use-script": {
+        "title": "useScript Hook",
+        "sidebar_label": "useScript"
+      },
       "hooks/use-slug": {
         "title": "useSlug Hook",
         "sidebar_label": "useSlug"
+      },
+      "hooks/use-timeout": {
+        "title": "useTimeout Hook",
+        "sidebar_label": "useTimeout"
+      },
+      "hooks/use-window-scroll": {
+        "title": "useWindowScroll Hook",
+        "sidebar_label": "useWindowScroll"
+      },
+      "hooks/use-window-size": {
+        "title": "useWindowSize Hook",
+        "sidebar_label": "useWindowSize"
       }
     },
     "links": {
