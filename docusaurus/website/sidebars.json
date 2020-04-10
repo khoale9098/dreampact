@@ -11,11 +11,21 @@
       "hooks/use-condition-click",
       "hooks/use-document-title",
       "hooks/use-event-emitter",
+      "hooks/use-event-listener",
+      "hooks/use-fullscreen",
+      "hooks/use-interval",
       "hooks/use-in-viewport",
       "hooks/use-is-mobile",
       "hooks/use-key-press",
       "hooks/use-local-storage",
-      "hooks/use-slug"
+      "hooks/use-lock-body-scroll",
+      "hooks/use-navigator-online",
+      "hooks/use-router",
+      "hooks/use-script",
+      "hooks/use-slug",
+      "hooks/use-timeout",
+      "hooks/use-window-scroll",
+      "hooks/use-window-size"
     ]
   }
 }
