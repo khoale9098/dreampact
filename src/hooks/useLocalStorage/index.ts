@@ -25,17 +25,17 @@ export default function useLocalStorage<T = string>(
   );
 
   const changeState = useCallback((value: T) => writeStorage(key, value), [key]);
-  const deleteState = useCallback(() => removeFromStorage(key), []);
+  const deleteState = useCallback(() => removeFromStorage(key), [key]);
 
   useEffect(() => {
     setLocalState(localStorage.getItem(key) === null ? initialValue : tryParse(localStorage.getItem(key)));
-  }, [key]);
+  }, [key, initialValue]);
 
   useEffect(() => {
     if (initialValue !== undefined && localStorage.getItem(key) === null) {
       changeState(initialValue);
     }
-  }, [key]);
+  }, [key, changeState, initialValue]);
 
   return [localState === null ? initialValue : localState, changeState, deleteState];
 }

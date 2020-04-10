@@ -34,3 +34,5 @@ export default function useEventEmitter<T = void>() {
   }
   return ref.current;
 }
+
+export * from './types';

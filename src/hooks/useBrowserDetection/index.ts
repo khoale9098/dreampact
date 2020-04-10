@@ -11,3 +11,5 @@ export default function useBrowserDetection(agent: NavigatorID['userAgent']): Br
     ...(browserInfo as BrowserDetection),
   };
 }
+
+export * from './types';

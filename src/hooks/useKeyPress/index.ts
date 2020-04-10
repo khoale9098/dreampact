@@ -38,3 +38,4 @@ const useKeyPress = (targetKey: string) => {
   return keyPressed;
 };
 export default useKeyPress;
+export * from './types';
