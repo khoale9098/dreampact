@@ -1,6 +1,6 @@
 {
   "exclude": ["node_modules", "coverage", "lib", "scripts"],
-  "files": ["src/index.ts"],
+  "files": ["src/index.tsx"],
   "compilerOptions": {
     "target": "ES5",
     "module": "ES2015",

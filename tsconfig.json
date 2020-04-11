@@ -6,7 +6,7 @@
     "scripts"
   ],
   "files": [
-    "src/index.ts"
+    "src/index.tsx"
   ],
   "compilerOptions": {
     "target": "ES5",
