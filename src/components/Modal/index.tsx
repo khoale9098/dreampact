@@ -17,9 +17,13 @@ export function Modal(props: ModalProps) {
     closeOnOverlayClick = true,
     closeOnEscapeKeyClick = true,
     size = 'md',
-    lockScroll = false,
+    lockBodyScroll: lockScroll = false,
     title,
     elementId = 'root',
+    vertical = 'center',
+    horizontal = 'center',
+    scrollable = false,
+    scrollableOn = 'page',
   } = props;
 
   const isEscapeKeyPressed = useKeyPress('Escape');
@@ -65,7 +69,13 @@ export function Modal(props: ModalProps) {
   }, [handleEscapeKeyPressed, isEscapeKeyPressed]);
 
   const modalContent = isOpen && (
-    <OverlayStyle onClick={handleOverlayClick}>
+    <OverlayStyle
+      onClick={handleOverlayClick}
+      vertical={vertical}
+      horizontal={horizontal}
+      scrollable={scrollable}
+      scrollableOn={scrollableOn}
+    >
       <ModalStyle size={size}>
         {!hideCloseButton && (
           <ModalCloseButton onClick={handleCloseButtonClick}>
@@ -82,3 +92,7 @@ export function Modal(props: ModalProps) {
 
   return createPortal(modalContent, document.getElementById(elementId));
 }
+
+export * from './types';
+export * from './props';
+export * from './styles';

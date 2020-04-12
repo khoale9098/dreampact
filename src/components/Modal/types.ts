@@ -8,7 +8,11 @@ export type ModalProps = {
   closeOnOverlayClick?: boolean;
   closeOnEscapeKeyClick?: boolean;
   size?: Sizes;
-  lockScroll?: boolean;
+  lockBodyScroll?: boolean;
+  scrollable?: boolean;
+  scrollableOn?: 'modalBody' | 'page';
   title?: string;
   elementId?: string;
+  vertical?: 'center' | 'top' | 'bottom';
+  horizontal?: 'center' | 'left' | 'right';
 };

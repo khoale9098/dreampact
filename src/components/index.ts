@@ -7,3 +7,4 @@ export * from './Container';
 export * from './Tooltip';
 export * from './Modal';
 export * from './icons';
+export * from './Text';

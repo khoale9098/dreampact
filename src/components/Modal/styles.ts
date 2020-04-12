@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Sizes } from './../../types';
-import { theme } from './../../constants';
+import { theme, breakpointsCSS } from './../../constants';
 import { modalSize } from './props';
 
 import { SvgStyle } from './../Svg';
@@ -10,7 +10,6 @@ export const ModalStyle = styled.div<{ size: Sizes }>`
   position: relative;
   width: 100%;
   max-height: 100%;
-  margin: 0 auto;
 
   max-width: ${({ size }) => modalSize[size as Sizes]};
 `;
@@ -87,7 +86,13 @@ ModalHeader.defaultProps = {
   theme,
 };
 
-export const OverlayStyle = styled.div<{ hideOverlay?: boolean }>`
+export const OverlayStyle = styled.div<{
+  hideOverlay?: boolean;
+  vertical: 'center' | 'top' | 'bottom';
+  horizontal: 'center' | 'left' | 'right';
+  scrollable: boolean;
+  scrollableOn: 'page' | 'modalBody';
+}>`
   z-index: ${({ hideOverlay }) => (hideOverlay ? '-1' : '98')};
   position: fixed;
   top: 0;
@@ -95,14 +100,38 @@ export const OverlayStyle = styled.div<{ hideOverlay?: boolean }>`
   bottom: 0;
   left: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: ${({ vertical }) => (vertical === 'center' ? 'center' : vertical === 'top' ? 'flex-start' : 'flex-end')};
+  justify-content: ${({ horizontal }) =>
+    horizontal === 'center' ? 'center' : horizontal === 'left' ? 'flex-start' : 'flex-end'};
   height: 100%;
   width: 100%;
   background-color: ${({ hideOverlay }) => (hideOverlay ? 'transparent' : 'rgba(0, 0, 0, 0.3)')};
+  overflow: ${({ scrollable, scrollableOn }) => (scrollable && scrollableOn === 'page' ? 'auto' : 'hidden')};
+
+  ${({ scrollable, scrollableOn }) =>
+    scrollable &&
+    scrollableOn === 'modalBody' &&
+    css`
+      ${ModalContent} {
+        max-height: 90vh;
+      }
+
+      ${ModalBody} {
+        overflow: auto;
+        height: 70vh;
+      }
+    `}
+
+  @media ${breakpointsCSS.md} {
+    padding: 2rem;
+  }
 `;
 
 OverlayStyle.defaultProps = {
   hideOverlay: false,
+  scrollable: false,
+  scrollableOn: 'page',
   theme,
+  vertical: 'center',
+  horizontal: 'center',
 };
