@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import isClient from '../../utils/isClient';
 
-export default function useWindowScroll() {
+export function useWindowScroll() {
   const [state, setState] = useState({
     x: isClient ? window.pageXOffset : 0,
     y: isClient ? window.pageYOffset : 0,

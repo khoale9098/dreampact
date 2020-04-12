@@ -1,19 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Row, Col } from './components';
+import { Row, Col, Button, CssReset, Container, Tooltip, Modal } from './components';
 
 export * from './hooks';
 export * from './components';
 
 function App() {
+  const [isOpen, setIsOpen] = React.useState(false);
+
   return (
-    <Row lg={50} className="hello-world hi" onClick={() => console.log('row')}>
-      <Col className="hi" onClick={() => console.log('hi')}>
-        hi
-      </Col>
-      <Col>hi</Col>
-    </Row>
+    <Container style={{ height: '5000px' }}>
+      <Row>
+        <Col>
+          <Button>hello</Button>
+        </Col>
+        <Col>
+          <Tooltip title="Hello World do tooltip" position="right">
+            <Button variant="dark" elevate onClick={() => setIsOpen(true)}>
+              Abrir modal
+            </Button>
+          </Tooltip>
+        </Col>
+      </Row>
+      <Modal title="Hello World From Modal" isOpen={isOpen} setIsOpen={setIsOpen} size="xl" lockScroll>
+        Hello world
+      </Modal>
+      <CssReset />
+    </Container>
   );
 }
 

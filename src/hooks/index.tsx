@@ -19,3 +19,4 @@ export * from './useSlug';
 export * from './useTimeout';
 export * from './useWindowScroll';
 export * from './useWindowsSize';
+export * from './useIsOffScreen';

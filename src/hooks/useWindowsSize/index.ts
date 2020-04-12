@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import isClient from '../../utils/isClient';
-import useEventListener from '../useEventListener';
+import { useEventListener } from '../useEventListener';
 
-export default function useWindowSize(initialWidth?: number, initialHeight?: number) {
+export function useWindowSize(initialWidth?: number, initialHeight?: number) {
   const [windowSize, setWindowSize] = useState({
     width: isClient ? window.innerWidth : initialWidth,
     height: isClient ? window.innerHeight : initialHeight,

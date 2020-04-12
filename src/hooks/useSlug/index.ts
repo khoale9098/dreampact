@@ -1,4 +1,4 @@
-const useSlug = (value: string) => {
+export const useSlug = (value: string) => {
   const from = 'àáäâãåăæçèéëêǵḧìíïîḿńǹñòóöôœøṕŕßśșțùúüûǘẃẍÿź·/_,:;';
   const to = 'aaaaaaaaceeeeghiiiimnnnooooooprssstuuuuuwxyz------';
   const regex = new RegExp(from.split('').join('|'), 'g');
@@ -14,5 +14,3 @@ const useSlug = (value: string) => {
     .replace(/^-+/, '')
     .replace(/-+$/, '');
 };
-
-export default useSlug;

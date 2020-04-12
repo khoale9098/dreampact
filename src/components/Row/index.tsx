@@ -11,3 +11,4 @@ export function Row(props: RowProps) {
 export * from './styles';
 export * from './types';
 export * from './helpers';
+export * from './Col';

@@ -52,7 +52,7 @@ export type isMobileResult = {
   isAnyMobile: boolean;
 };
 
-export default function useIsMobile(userAgent?: NavigatorID['userAgent'] | NavigatorID['vendor']): isMobileResult {
+export function useIsMobile(userAgent?: NavigatorID['userAgent'] | NavigatorID['vendor']): isMobileResult {
   userAgent = userAgent || (typeof navigator !== 'undefined' ? navigator.userAgent : '');
 
   // Facebook mobile app's integrated browser adds a bunch of strings that

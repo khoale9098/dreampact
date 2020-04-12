@@ -3,7 +3,7 @@ import isClient from '../../utils/isClient';
 
 import { UseEventListener } from './types';
 
-function useEventListener(
+export function useEventListener(
   eventName: UseEventListener['eventName'],
   handler: UseEventListener['handler'],
   element: UseEventListener['element'] = isClient ? window : undefined,
@@ -29,5 +29,4 @@ function useEventListener(
   }, [eventName, element]);
 }
 
-export default useEventListener;
 export * from './types';

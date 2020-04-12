@@ -1,14 +1,26 @@
-import { useLayoutEffect } from 'react';
+import { useLayoutEffect, useCallback } from 'react';
 
-export default function useLockBodyScroll() {
+/**
+ * ### Hook to lock or unlock body scroll
+ * You can pass an optional param in hook call to tell if you want or not to lock scroll in hook call.
+ *
+ * @param lock lock in hook first call?
+ */
+export function useLockBodyScroll(lock = true) {
+  const lockBodyScroll = useCallback(() => (document.body.style.overflow = 'hidden'), []);
+  const unlockBodyScroll = useCallback(() => (document.body.style.overflow = 'auto'), []);
+
   useLayoutEffect(() => {
-    // Get original body overflow
-    const originalStyle = window.getComputedStyle(document.body).overflow;
-
-    // Prevent scrolling on mount
-    document.body.style.overflow = 'hidden';
+    if (lock) {
+      lockBodyScroll();
+    }
 
     // Re-enable scrolling when component unmounts
-    return () => (document.body.style.overflow = originalStyle);
-  }, []);
+    return () => unlockBodyScroll();
+  }, [lock, unlockBodyScroll, lockBodyScroll]);
+
+  return {
+    lockBodyScroll,
+    unlockBodyScroll,
+  };
 }

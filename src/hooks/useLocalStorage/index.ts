@@ -16,10 +16,7 @@ export function removeFromStorage(key: string) {
   localStorage.removeItem(key);
 }
 
-export default function useLocalStorage<T = string>(
-  key: string,
-  initialValue?: T,
-): [T, (value: T) => void, () => void] {
+export function useLocalStorage<T = string>(key: string, initialValue?: T): [T, (value: T) => void, () => void] {
   const [localState, setLocalState] = useState<T>(
     localStorage.getItem(key) === null ? initialValue : tryParse(localStorage.getItem(key)),
   );

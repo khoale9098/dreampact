@@ -1,6 +1,6 @@
 import { MutableRefObject, useRef, useEffect, useCallback } from 'react';
 
-export default function useClickAway<T extends Element = HTMLDivElement>(
+export function useClickAway<T extends Element = HTMLDivElement>(
   onClickAway: (event: KeyboardEvent) => void,
 ): MutableRefObject<T> {
   const element = useRef<T>();

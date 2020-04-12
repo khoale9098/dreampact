@@ -3,9 +3,9 @@ import { ColProps } from './types';
 import { ColStyle } from './styles';
 
 export function Col(props: ColProps) {
-  const { children, ...styledProps } = props;
+  const { children, ...otherProps } = props;
 
-  return <ColStyle {...styledProps}>{children}</ColStyle>;
+  return <ColStyle {...otherProps}>{children}</ColStyle>;
 }
 
 export * from './styles';

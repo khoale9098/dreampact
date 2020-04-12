@@ -1,7 +1,12 @@
-import { DefaultElementProps } from './../../types';
+import { DefaultElementProps, DefaultStyleProps, Omit } from '../../types';
+
 import { BreakpointsTypes } from '../../types';
-export interface RowProps extends BreakpointsTypes, DefaultElementProps {
-  children: React.ReactElement[] | React.ReactElement;
+
+export interface RowStyleProps extends BreakpointsTypes, DefaultStyleProps {
+  alignItems?: 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch' | 'initial' | 'inherit';
 }
 
-export type RowStyleProps = BreakpointsTypes;
+export interface RowProps
+  extends DefaultElementProps<HTMLDivElement>,
+    Omit<RowStyleProps, 'theme'>,
+    React.HTMLAttributes<HTMLDivElement> {}

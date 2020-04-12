@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { UseNavigatorOnlineProps } from './types';
-const useNavigatorOnline = ({ onOffline, onOnline }: UseNavigatorOnlineProps) => {
+export const useNavigatorOnline = ({ onOffline, onOnline }: UseNavigatorOnlineProps) => {
   const [online, setOnline] = useState(navigator.onLine);
 
   const handleOnline = useCallback(() => {
@@ -26,5 +26,4 @@ const useNavigatorOnline = ({ onOffline, onOnline }: UseNavigatorOnlineProps) =>
   };
 };
 
-export default useNavigatorOnline;
 export * from './types';

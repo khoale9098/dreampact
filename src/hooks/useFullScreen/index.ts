@@ -23,7 +23,7 @@ export function isFullScreenElement(el: Element) {
   );
 }
 
-function useFullScreen<T extends HTMLElement>(element: MutableRefObject<T>) {
+export function useFullScreen<T extends HTMLElement>(element: MutableRefObject<T>) {
   const initialState = !isClient ? false : isFullScreenElement(element.current);
   const [fullScreen, setFullScreen] = useState(initialState);
 
@@ -72,5 +72,3 @@ function useFullScreen<T extends HTMLElement>(element: MutableRefObject<T>) {
     toggle: fullScreen ? closeFullScreen : openFullScreen,
   };
 }
-
-export default useFullScreen;

@@ -22,9 +22,11 @@ function isInViewPort(el: HTMLElement): boolean {
   return false;
 }
 
-function useInViewport<T extends HTMLElement = HTMLElement>(): [InViewport, MutableRefObject<T>];
-function useInViewport<T extends HTMLElement = HTMLElement>(arg: Arg): [InViewport];
-function useInViewport<T extends HTMLElement = HTMLElement>(...args: [Arg] | []): [InViewport, MutableRefObject<T>?] {
+export function useInViewport<T extends HTMLElement = HTMLElement>(): [InViewport, MutableRefObject<T>];
+export function useInViewport<T extends HTMLElement = HTMLElement>(arg: Arg): [InViewport];
+export function useInViewport<T extends HTMLElement = HTMLElement>(
+  ...args: [Arg] | []
+): [InViewport, MutableRefObject<T>?] {
   const element = useRef<T>();
   const hasPassedInElement = args.length === 1;
   const arg = useRef(args[0]);
@@ -68,5 +70,3 @@ function useInViewport<T extends HTMLElement = HTMLElement>(...args: [Arg] | [])
 
   return [inViewPort, element as MutableRefObject<T>];
 }
-
-export default useInViewport;

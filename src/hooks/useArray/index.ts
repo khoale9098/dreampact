@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 
-export default function useArray<T>(
+export function useArray<T>(
   initial: T[],
 ): [T[], React.Dispatch<React.SetStateAction<T[]>>, (a: T) => void, () => void, (index: number) => void] {
   const [value, setValue] = useState(initial);

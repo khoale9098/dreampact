@@ -1,3 +1,3 @@
-export type Key = {
+export type KeyProps = {
   key: string;
 };

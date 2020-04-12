@@ -4,7 +4,7 @@ import Bowser from 'bowser';
 
 import { BrowserDetection } from './types';
 
-export default function useBrowserDetection(agent: NavigatorID['userAgent']): BrowserDetection {
+export function useBrowserDetection(agent: NavigatorID['userAgent']): BrowserDetection {
   const browserInfo = useMemo(() => Bowser.parse(agent), [agent]);
 
   return {

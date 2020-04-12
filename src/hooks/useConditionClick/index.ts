@@ -58,7 +58,7 @@ const getClickTypes = (types: CLICK_TYPES[]) => {
   return clickTypes;
 };
 
-function useConditionClick(fn: ClickConditionEvent, ...types: CLICK_TYPES[]) {
+export function useConditionClick(fn: ClickConditionEvent, ...types: CLICK_TYPES[]) {
   const clickTypes = useRef([]);
   useEffect(() => {
     clickTypes.current = getClickTypes(types);
@@ -74,5 +74,4 @@ function useConditionClick(fn: ClickConditionEvent, ...types: CLICK_TYPES[]) {
   );
 }
 
-export default useConditionClick;
 export * from './types';
