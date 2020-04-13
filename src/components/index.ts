@@ -8,3 +8,5 @@ export * from './Tooltip';
 export * from './Modal';
 export * from './icons';
 export * from './Text';
+export * from './Popover';
+export * from './Accordion';

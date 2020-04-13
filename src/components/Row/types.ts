@@ -9,4 +9,6 @@ export interface RowStyleProps extends BreakpointsTypes, DefaultStyleProps {
 export interface RowProps
   extends DefaultElementProps<HTMLDivElement>,
     Omit<RowStyleProps, 'theme'>,
-    React.HTMLAttributes<HTMLDivElement> {}
+    React.HTMLAttributes<HTMLDivElement> {
+  children?: never;
+}

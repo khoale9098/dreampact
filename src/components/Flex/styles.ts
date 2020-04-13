@@ -6,6 +6,12 @@ import { FlexStyleProps } from './types';
 export const FlexStyle = styled.div<FlexStyleProps>`
   display: flex;
 
+  ${({ padding }: FlexStyleProps) =>
+    padding &&
+    css`
+      padding: ${padding};
+    `};
+
   ${({ alignItems }: FlexStyleProps) =>
     alignItems &&
     css`
@@ -57,4 +63,6 @@ export const FlexStyle = styled.div<FlexStyleProps>`
 
 FlexStyle.defaultProps = {
   theme,
+  grow: 1,
+  shrink: 0,
 };
