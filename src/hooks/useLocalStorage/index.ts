@@ -8,31 +8,24 @@ function tryParse<T>(value?: string): T {
   }
 }
 
-interface KVP<K, V> {
-  key: K;
-  value: V;
+function fireEvent<T = string>(payload: { key: string; value: T }) {
+  return new CustomEvent('onLocalStorageChange', { detail: payload });
 }
 
-export class LocalStorageChanged<TValue> extends CustomEvent<KVP<string, TValue>> {
-  static eventName = 'onLocalStorageChange';
-
-  constructor(payload: KVP<string, TValue>) {
-    super(LocalStorageChanged.eventName, { detail: payload });
-  }
-}
-
-export function isTypeOfLocalStorageChanged<TValue>(evt: any): evt is LocalStorageChanged<TValue> {
-  return !!evt && (evt instanceof LocalStorageChanged || (evt.detail && evt.type === LocalStorageChanged.eventName));
+export function isTypeOfLocalStorageChanged<TValue>(evt: any, key: string): boolean {
+  return evt && evt.detail && evt.detail.key === key;
 }
 
 export function writeStorage<T = string>(key: string, value: T) {
   localStorage.setItem(key, typeof value === 'object' ? JSON.stringify(value) : `${value}`);
-  window.dispatchEvent(new LocalStorageChanged({ key, value }));
+  window.dispatchEvent(
+    fireEvent<T>({ key, value }),
+  );
 }
 
 export function removeFromStorage(key: string) {
   localStorage.removeItem(key);
-  window.dispatchEvent(new LocalStorageChanged({ key, value: '' }));
+  window.dispatchEvent(fireEvent({ key, value: '' }));
 }
 
 export function useLocalStorage<T = string>(key: string, initialValue?: T): [T, (value: T) => void, () => void] {
@@ -40,8 +33,8 @@ export function useLocalStorage<T = string>(key: string, initialValue?: T): [T, 
     localStorage.getItem(key) === null ? initialValue : tryParse(localStorage.getItem(key)),
   );
 
-  const onLocalStorageChange = (event: LocalStorageChanged<T> | StorageEvent) => {
-    if (isTypeOfLocalStorageChanged(event)) {
+  const onLocalStorageChange = (event: any | StorageEvent) => {
+    if (isTypeOfLocalStorageChanged(event, key)) {
       if (event.detail.key === key) {
         setLocalState(event.detail.value);
       }
@@ -68,8 +61,8 @@ export function useLocalStorage<T = string>(key: string, initialValue?: T): [T, 
   useEffect(() => {
     // The custom storage event allows us to update our component
     // when a change occurs in localStorage outside of our component
-    const listener = (e: Event) => onLocalStorageChange(e as LocalStorageChanged<T>);
-    window.addEventListener(LocalStorageChanged.eventName, listener);
+    const listener = (e: Event) => onLocalStorageChange(e);
+    window.addEventListener('onLocalStorageChange', listener);
 
     // The storage event only works in the context of other documents (eg. other browser tabs)
     window.addEventListener('storage', listener);
@@ -79,7 +72,7 @@ export function useLocalStorage<T = string>(key: string, initialValue?: T): [T, 
     }
 
     return () => {
-      window.removeEventListener(LocalStorageChanged.eventName, listener);
+      window.removeEventListener('onLocalStorageChange', listener);
       window.removeEventListener('storage', listener);
     };
   }, [key, changeState, initialValue]);
