@@ -28,6 +28,11 @@ export const InputStyle = styled.input<InputStyleProps>`
   border-radius: 4px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 
+  &:disabled {
+    cursor: not-allowed;
+    background: #f7f8fa;
+  }
+
   &:focus {
     color: ${({
       theme: {
