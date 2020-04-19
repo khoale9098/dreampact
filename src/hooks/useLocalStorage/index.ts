@@ -33,23 +33,24 @@ export function useLocalStorage<T = string>(key: string, initialValue?: T): [T, 
     localStorage.getItem(key) === null ? initialValue : tryParse(localStorage.getItem(key)),
   );
 
-  const onLocalStorageChange = (event: any | StorageEvent) => {
-    if (isTypeOfLocalStorageChanged(event, key)) {
-      if (event.detail.key === key) {
+  const onLocalStorageChange = useCallback(
+    (event: any | StorageEvent) => {
+      if (isTypeOfLocalStorageChanged(event, key)) {
         setLocalState(event.detail.value);
-      }
-    } else {
-      if (event.key === key) {
-        if (event.newValue) {
-          setLocalState(tryParse(event.newValue));
+      } else {
+        if (event.key === key) {
+          if (event.newValue) {
+            setLocalState(tryParse(event.newValue));
+          }
         }
       }
-    }
-  };
+    },
+    [key],
+  );
 
   useEffect(() => {
     setLocalState(localStorage.getItem(key) === null ? initialValue : tryParse(localStorage.getItem(key)));
-  }, [key]);
+  }, [key, initialValue]);
 
   const changeState = useCallback((value: T) => writeStorage(key, value), [key]);
   const deleteState = useCallback(() => removeFromStorage(key), [key]);
@@ -75,7 +76,7 @@ export function useLocalStorage<T = string>(key: string, initialValue?: T): [T, 
       window.removeEventListener('onLocalStorageChange', listener);
       window.removeEventListener('storage', listener);
     };
-  }, [key, changeState, initialValue]);
+  }, [key, changeState, initialValue, onLocalStorageChange]);
 
   return [localState === null ? initialValue : localState, changeState, deleteState];
 }

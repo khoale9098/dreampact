@@ -10,3 +10,4 @@ export * from './icons';
 export * from './Text';
 export * from './Popover';
 export * from './Accordion';
+export * from './inputs';

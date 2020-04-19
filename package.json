@@ -1,7 +1,7 @@
 {
   "name": "dreampact",
   "description": "Framework to help creating a complete, reusable and responsive react application.",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "author": "Patrick Dias <pdcamargo@hotmail.com> (https://pdcamargo.github.com)",
   "repository": "https://github.com/pdcamargo/dreampact",
   "main": "lib/index.js",
